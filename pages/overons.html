@@ -243,7 +243,7 @@
                 Quizzes
             </a>
             <div class="nav-links">
-                <a href="#">Home</a>
+                <a href="/index.html">Home</a>
                 <a href="#">Quizzes</a>
                 <a href="#">Over ons</a>
             </div>
@@ -346,22 +346,22 @@
         }
         
         // Add navigation functionality
-        const navLinks = document.querySelectorAll('.nav-links a');
+        // const navLinks = document.querySelectorAll('.nav-links a');
         
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = link.textContent.toLowerCase();
-                if (page === 'home') {
-                    window.location.href = 'index.html';
-                } else if (page === 'quizzes') {
-                    window.location.href = 'quizzes.html';
-                } else if (page === 'over ons') {
-                    // Already on this page
-                    return;
-                }
-            });
-        });
+        // navLinks.forEach(link => {
+        //     link.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         const page = link.textContent.toLowerCase();
+        //         if (page === 'home') {
+        //             window.location.href = 'index.html';
+        //         } else if (page === 'quizzes') {
+        //             window.location.href = 'quizzes.html';
+        //         } else if (page === 'over ons') {
+        //             // Already on this page
+                    // return;
+        //         }
+        //     });
+        // });
         
         // Logo click returns to home
         const logo = document.querySelector('.logo');
