@@ -3,143 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wie zijn wij? - Quizzes</title>
-    <link rel="stylesheet" href="/css/overons.css">
+    <title>Quizzes.nl - Test je kennis met deze leuke quizzes</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
+
 <body>
     <header>
-        <div class="navbar">
-            <a href="#" class="logo">
-                <div class="logo-circle"></div>
-                Quizzes
-            </a>
-                <ul>
-                    <li><a onclick="window.document.location.href = '/index.html'">Home</a></li>
-                    <li><a onclick="window.document.location.href = '/pages/vragen.html'">Vragen</a></li>
-                    <li><a onclick="window.document.location.href = '/pages/overons.html'">Over ons</a></li>
-                </ul>
-            <div class="search-container">
-                <input type="text" placeholder="Zoeken..." class="search-input">
-                <button class="search-btn">🔍</button>
-            </div>
+      <div class="logo">
+        <div class="logo-circle"></div>
+            <span>Quizzes</span>
+        </div>
+        <nav>
+            <ul> 
+                <li><a href="/pages/autisme.html"">Home</a></li>
+                <li><a href="/pages/vragen.html"">Vragen</a></li>
+                <li><a href="/pages/overons.html"'">Over ons</a></li> 
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Zoeken...">
+            <button class="search-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
         </div>
     </header>
-
-    <main>
-        <section class="hero-banner">
-            <div class="triangles-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Wie zijn wij?</h1>
-                    <p>Het team achter de website</p>
-                </div>
-                <div class="hero-image"></div>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welkom bij Quizzes.nl</h1>
+            <p>Test je kennis met deze leuke quizzes</p>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+    
+    <section class="quizzes-section">
+        <div class="quiz-card autisme" data-quiz="autisme">
+            <div class="quiz-card-img"></div>
+            <div class="quiz-card-content">
+                <h3>Autisme Quizzie</h3>
+                <p>Daag je kennis over Autisme uit</p>
+                <div class="difficulty-badge">Difficulty: Easy</div>
+                <div class="author">Soufyan</div>
             </div>
-        </section>
-
-        <section class="team-section">
-            <div class="team-card">
-                <div class="team-card-inner">
-                    <h2 class="team-name">Soufyan</h2>
-                    <p class="team-description">
-                        Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                    </p>
-                </div>
+        </div>
+        
+        <div class="quiz-card depressie" data-quiz="depressie">
+            <div class="quiz-card-img"></div>
+            <div class="quiz-card-content">
+                <h3>Depressie Quizzie</h3>
+                <p>Test je kennis over Depressie uit</p>
+                <div class="difficulty-badge">Difficulty: Medium</div>
+                <div class="author">Fabian</div>
             </div>
-            <div class="team-card">
-                <div class="team-card-inner">
-                    <h2 class="team-name">Fabi</h2>
-                    <p class="team-description">
-                        Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                    </p>
-                </div>
+        </div>
+        
+        <div class="quiz-card dyscalculie" data-quiz="dyscalculie">
+            <div class="quiz-card-img"></div>
+            <div class="quiz-card-content">
+                <h3>Dyscalculie Quizzie</h3>
+                <p>Daag je kennis over Dyscalculie uit</p>
+                <div class="difficulty-badge">Difficulty: Medium</div>
+                <div class="author">Guusje</div>
             </div>
-            <div class="team-card">
-                <div class="team-card-inner">
-                    <h2 class="team-name">Guusje</h2>
-                    <p class="team-description">
-                        Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                    </p>
-                </div>
+        </div>
+        
+        <div class="quiz-card hoogbegaafdheid" data-quiz="hoogbegaafdheid">
+            <div class="quiz-card-img"></div>
+            <div class="quiz-card-content">
+                <h3>Hoogbegaafdheid Quizzie</h3>
+                <p>Test je kennis over Hoogbegaafdheid uit</p>
+                <div class="difficulty-badge">Difficulty: Hard</div>
+                <div class="author">Salah</div>
             </div>
-            <div class="team-card">
-                <div class="team-card-inner">
-                    <h2 class="team-name">Salah</h2>
-                    <p class="team-description">
-                        Mijn naam is Salahedin Said, 18 jaar, ik ben geboren in Nederland en sinds kleins af aan al gefascineerd over computers, op latere leeftijd toen ik begon na te denken welke kant ik op zou willen gaan was er maar een optie die ik graag wilde en dat was developen. ik ben begonnen met websites en vooral talen zoals HTML, CSS en Javascript gebruik ik dagelijks maar in de toekomst hoop ik nog meer te weten over andere talen en de talen die ik zelf nu gebruik. Naast programmeren doe ik ook andere dingen in mijn leven zo hou ik wel van gamen vroeger iets meer maar doe het nog steeds met regelmaat en ik sport veel omdat als je 8 uur per dag zit en typt dat beweging daarbij ook belangerijk is en vind het natuurlijk leuk.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
+        </div>
+    </section>
+    
     <footer>
-        <div class="triangles-pattern"></div>
-        © 2025 Quizzes App. All rights reserved.
+        <p>© 2025 Quizzes App. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Add hover effect to team cards
-        const teamCards = document.querySelectorAll('.team-card');
-        
-        teamCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px)';
-                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-                card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-            });
-        });
-        
-        // Add search functionality
-        const searchInput = document.querySelector('.search-input');
-        const searchBtn = document.querySelector('.search-btn');
-        
-        searchBtn.addEventListener('click', () => {
-            performSearch();
-        });
-        
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
-        });
-        
-        function performSearch() {
-            const searchTerm = searchInput.value.trim().toLowerCase();
-            if (searchTerm) {
-                alert(`Je zocht naar: ${searchTerm}\nZoekfunctionaliteit is in ontwikkeling.`);
-                searchInput.value = '';
-            }
-        }
-        
-        // Add navigation functionality
-        // const navLinks = document.querySelectorAll('.nav-links a');
-        
-        // navLinks.forEach(link => {
-        //     link.addEventListener('click', (e) => {
-        //         e.preventDefault();
-        //         const page = link.textContent.toLowerCase();
-        //         if (page === 'home') {
-        //             window.location.href = 'index.html';
-        //         } else if (page === 'quizzes') {
-        //             window.location.href = 'quizzes.html';
-        //         } else if (page === 'over ons') {
-        //             // Already on this page
-                    // return;
-        //         }
-        //     });
-        // });
-        
-        // Logo click returns to home
-        const logo = document.querySelector('.logo');
-        logo.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = 'index.html';
-        });
-    </script>
+    
+    <script src="/scripts/main.js"></script>
 </body>
 </html>

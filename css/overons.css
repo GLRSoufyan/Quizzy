@@ -75,7 +75,7 @@ header {
 }
 
 .hero-banner {
-  background: linear-gradient(45deg, #3a7bd5, #00d2ff, #3a6073, #16222a);
+  background: linear-gradient(45deg, #3c78d8, #2ecc71, #a857ff, #2ae2ca);
   background-size: 300% 300%;
   animation: gradient-animation 15s ease infinite;
   padding: 80px 0;
