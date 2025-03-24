@@ -69,16 +69,18 @@ nav a {
     cursor: pointer;
 }
 
-/* Hero section */
-.hero {
-    background: linear-gradient(135deg, #3c78d8 0%, #2ecc71 100%);
-    padding: 3rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+.hero, footer {
+    background: linear-gradient(45deg, #3c78d8, #2ecc71, #a857ff, #2ae2ca);
+    background-size: 300% 300%;
+    animation: gradient-animation 15s ease infinite;
+    padding: 80px 0;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    padding: 3rem 2rem;
+    color: white;
 }
 
 .hero::before {
@@ -141,7 +143,7 @@ nav a {
     position: relative;
 }
 
-.quiz-card::before {
+.quiz-card::before, footer::before {
     content: '';
     position: absolute;
     top: 0;
@@ -215,29 +217,11 @@ nav a {
     background: linear-gradient(135deg, #3a47d5 0%, #00d2ff 100%);
 }
 
-/* Footer styles */
-footer {
-    background: linear-gradient(135deg, #3c78d8 0%, #2ecc71 100%);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0,0 50,25 100,0" fill="rgba(255,255,255,0.1)"/><polygon points="0,25 50,50 100,25" fill="rgba(255,255,255,0.15)"/><polygon points="0,50 50,75 100,50" fill="rgba(255,255,255,0.1)"/><polygon points="0,75 50,100 100,75" fill="rgba(255,255,255,0.15)"/></svg>');
-    background-size: 100px 100px;
-    opacity: 0.4;
-    z-index: 0;
-}
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
 footer p {
     position: relative;

@@ -9,6 +9,25 @@ body {
     background-color: #ffffff;
 }
 
+.hero, footer {
+    background: linear-gradient(45deg, #3c78d8, #2ecc71, #a857ff, #2ae2ca);
+    background-size: 300% 300%;
+    animation: gradient-animation 15s ease infinite;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 3rem 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 header {
     display: flex;
@@ -304,9 +323,13 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     position: relative;
     overflow: hidden;
+}
+
+.button-container{
+    padding-bottom: 10px;
 }
 
 footer::before {
