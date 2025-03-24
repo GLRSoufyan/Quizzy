@@ -1,4 +1,4 @@
- // Quiz data structure
+// Quiz data structure
  const quizData = {
     multipleChoice: [
         {
