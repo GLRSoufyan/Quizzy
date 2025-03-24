@@ -241,6 +241,7 @@ footer::before {
 
 footer p {
     position: relative;
+    margin-top: 3rem;
     z-index: 1;
 }
 
