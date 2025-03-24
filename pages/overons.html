@@ -1,72 +1,374 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-    <link href="./css/main.css" rel="stylesheet" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="v24_228">
-      <div class="v24_229">
-        <!-- Header Section -->
-        <div class="v24_230">
-          <div class="v24_231"></div>
-          <span class="v24_232">Quizzes</span>
-          <div class="v24_233">
-            <span class="v24_234">Home</span>
-            <span class="v24_235">Quizzes</span>
-            <span class="v24_236">Over ons</span>
-            <div class="v24_237">
-              <span class="v24_238">Zoeken...</span>
-              <div class="v24_239">
-                <div class="v24_240"></div>
-              </div>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wie zijn wij? - Quizzes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 30px;
+            height: 30px;
+            background-color: #f0f4f8;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .hero-banner {
+            background: linear-gradient(45deg, #3a7bd5, #00d2ff, #3a6073, #16222a);
+            background-size: 300% 300%;
+            animation: gradient-animation 15s ease infinite;
+            padding: 80px 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .triangles-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0idHJpYW5nbGVzIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMCkiPgogICAgICA8cGF0aCBkPSJNMCAwIGwzMCAzMCBsLTMwIDMwIHoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjdHJpYW5nbGVzKSIvPgo8L3N2Zz4=');
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            display: flex;
+            width: 1200px;
+            max-width: 90%;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: white;
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .team-section {
+            padding: 60px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .team-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-card-inner {
+            padding: 30px;
+            color: white;
+            background: linear-gradient(45deg, #3a7bd5, #00d2ff);
+            height: 100%;
+        }
+
+        .team-card:nth-child(1) .team-card-inner {
+            background: linear-gradient(45deg, #6441a5, #2a0845);
+        }
+
+        .team-card:nth-child(2) .team-card-inner {
+            background: linear-gradient(45deg, #3a7bd5, #00d2ff);
+        }
+
+        .team-card:nth-child(3) .team-card-inner {
+            background: linear-gradient(45deg, #1FA2FF, #12D8FA, #A6FFCB);
+        }
+
+        .team-card:nth-child(4) .team-card-inner {
+            background: linear-gradient(45deg, #56ab2f, #a8e063);
+        }
+
+        .team-name {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .team-description {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .triangles-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0idHJpYW5nbGVzIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMCkiPgogICAgICA8cGF0aCBkPSJNMCAwIGwzMCAzMCBsLTMwIDMwIHoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjdHJpYW5nbGVzKSIvPgo8L3N2Zz4=');
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                margin-top: 30px;
+                width: 250px;
+                height: 250px;
+            }
+
+            .team-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <div class="logo-circle"></div>
+                Quizzes
+            </a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Quizzes</a>
+                <a href="#">Over ons</a>
             </div>
-          </div>
+            <div class="search-container">
+                <input type="text" placeholder="Zoeken..." class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
         </div>
+    </header>
 
-        <!-- Main Content Section -->
-        <div class="v24_241">
-          <div class="v24_242">
-            <span class="v24_243">Welkom bij de Autisme Quiz</span>
-            <span class="v24_244">Test je kennis met deze leuke quiz</span>
-          </div>
-          <div class="v24_245">
-            <div class="v24_246"></div>
-          </div>
-          <div class="v24_247"></div>
-        </div>
+    <main>
+        <section class="hero-banner">
+            <div class="triangles-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Wie zijn wij?</h1>
+                    <p>Het team achter de website</p>
+                </div>
+                <div class="hero-image"></div>
+            </div>
+        </section>
 
-        <!-- Quiz Question Section -->
-        <div class="v24_248">
-          <div class="v24_320">
-            <span class="v24_324">Dit is vraag 1:</span>
-          </div>
-          <div class="v24_383">
-            <span class="v24_339">Antwoord 1</span>
-            <div class="v24_342"></div>
-          </div>
-          <div class="v24_387">
-            <span class="v24_388">Antwoord 2</span>
-            <div class="v24_389"></div>
-          </div>
-          <div class="v24_390">
-            <span class="v24_391">Antwoord 3</span>
-            <div class="v24_392"></div>
-          </div>
-          <div class="v24_393">
-            <span class="v24_394">Antwoord 4</span>
-            <div class="v24_395"></div>
-          </div>
-        </div>
-      </div>
+        <section class="team-section">
+            <div class="team-card">
+                <div class="team-card-inner">
+                    <h2 class="team-name">Soufyan</h2>
+                    <p class="team-description">
+                        Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-card-inner">
+                    <h2 class="team-name">Fabi</h2>
+                    <p class="team-description">
+                        Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-card-inner">
+                    <h2 class="team-name">Guusje</h2>
+                    <p class="team-description">
+                        Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-card-inner">
+                    <h2 class="team-name">Salah</h2>
+                    <p class="team-description">
+                        Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-      <!-- Footer Section -->
-      <div class="v24_312">
-        <div class="v24_313">
-          <span class="v24_314">© 2025 Quizzes App. All rights reserved.</span>
-        </div>
-      </div>
-    </div>
-  </body>
+    <footer>
+        <div class="triangles-pattern"></div>
+        © 2025 Quizzes App. All rights reserved.
+    </footer>
+
+    <script>
+        // Add hover effect to team cards
+        const teamCards = document.querySelectorAll('.team-card');
+        
+        teamCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            });
+        });
+        
+        // Add search functionality
+        const searchInput = document.querySelector('.search-input');
+        const searchBtn = document.querySelector('.search-btn');
+        
+        searchBtn.addEventListener('click', () => {
+            performSearch();
+        });
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            if (searchTerm) {
+                alert(`Je zocht naar: ${searchTerm}\nZoekfunctionaliteit is in ontwikkeling.`);
+                searchInput.value = '';
+            }
+        }
+        
+        // Add navigation functionality
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.textContent.toLowerCase();
+                if (page === 'home') {
+                    window.location.href = 'index.html';
+                } else if (page === 'quizzes') {
+                    window.location.href = 'quizzes.html';
+                } else if (page === 'over ons') {
+                    // Already on this page
+                    return;
+                }
+            });
+        });
+        
+        // Logo click returns to home
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
 </html>
