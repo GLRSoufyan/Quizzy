@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.hero, footer {
+    background: linear-gradient(45deg, #3c78d8, #2ecc71, #a857ff, #2ae2ca);
+    background-size: 300% 300%;
+    animation: gradient-animation 15s ease infinite;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 3rem 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.logo-circle {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #e6f7ff 0%, #b3e0ff 100%);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#quizScreen{
+    background: url(https://media.istockphoto.com/id/1213547551/nl/foto/wereld-autisme-bewustzijn-dag-concept-volwassen-en-kindhanden-die-raadselhart-op-lichtblauwe.jpg?s=2048x2048&w=is&k=20&c=05S--fBg27g7mDcdpgOndS5lSeQQ0c7GjtBpceQC8Z4=);
+}
+
+#resultScreen{
+    background: linear-gradient(135deg, #3c78d8 0%, #2ecc71 100%);
+}
+#resultScreen::before{
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0,0 50,25 100,0" fill="rgba(255,255,255,0.1)"/><polygon points="0,25 50,50 100,25" fill="rgba(255,255,255,0.15)"/><polygon points="0,50 50,75 100,50" fill="rgba(255,255,255,0.1)"/><polygon points="0,75 50,100 100,75" fill="rgba(255,255,255,0.15)"/></svg>');
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    background: linear-gradient(135deg, #3c78d8 0%, #2ecc71 100%);
+    padding: 80px 20px;
+    position: relative;
+   }
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0,0 50,25 100,0" fill="rgba(255,255,255,0.1)"/><polygon points="0,25 50,50 100,25" fill="rgba(255,255,255,0.15)"/><polygon points="0,50 50,75 100,50" fill="rgba(255,255,255,0.1)"/><polygon points="0,75 50,100 100,75" fill="rgba(255,255,255,0.15)"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ff5e94;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.welcome-container {
+    color: white;
+    max-width: 500px;
+    padding: 40px;
+}
+
+.welcome-container h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.welcome-container p {
+    font-size: 18px;
+}
+
+.question-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.answer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.answer-option {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.answer-option:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+}
+
+.answer-text {
+    color: white;
+    font-size: 18px;
+    text-align: left;
+}
+
+.answer-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answer-circle.selected {
+    background-color: white;
+}
+
+.open-answer {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    min-height: 120px;
+    color: white;
+    font-size: 16px;
+    resize: vertical;
+    margin: 10px 0;
+}
+
+.open-answer::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4));
+}
+
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.result-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.result-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.score {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.result-summary {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#startScreen{
+    background-color: #ffffff;
+    color: #000;
+}
+
+.start-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.start-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.start-text {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.start-button {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 30px;
+    padding: 15px 40px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background: linear-gradient(135deg, #3c78d8 0%, #2ecc71 100%);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-container{
+    padding-bottom: 10px;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0,0 50,25 100,0" fill="rgba(255,255,255,0.1)"/><polygon points="0,25 50,50 100,25" fill="rgba(255,255,255,0.15)"/><polygon points="0,50 50,75 100,50" fill="rgba(255,255,255,0.1)"/><polygon points="0,75 50,100 100,75" fill="rgba(255,255,255,0.15)"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+footer p {
+    position: relative;
+    margin-top: 3rem;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-links {
+        margin: 10px 0;
+    }
+    
+    .welcome-container {
+        padding: 20px;
+    }
+    
+    .welcome-container h1 {
+        font-size: 28px;
+    }
+}

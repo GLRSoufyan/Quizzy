@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoogbegaafdheid Quiz</title>
+    <link rel="stylesheet" href="/css/hoogbegaafdheid.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <div class="logo-circle"></div>
+              <span>Quizzes</span>
+          </div>
+          <nav>
+              <ul>
+                  <li><a onclick="window.document.location.href = '/index.html'">Home</a></li>
+                  <li><a onclick="window.document.location.href = '/pages/vragen.html'">Vragen</a></li>
+                  <li><a onclick="window.document.location.href = '/pages/overons.html'">Over ons</a></li>
+              </ul>
+          </nav>
+  
+          <div class="search-container">
+              <input type="text" class="search-input" placeholder="Zoeken...">
+              <button class="search-button">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+              </button>
+          </div>
+      </header>
+
+    <main>
+        <div class="hero">
+            <div class="badge">Salah</div>
+            <div class="welcome-container">
+                <h1>Welkom bij de hoogbegaafdheid Quiz</h1>
+                <p>Test je kennis met deze leuke quiz</p>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-container">
+            <h2 class="start-title">Hoogbegaafdheid Quiz</h2>
+            <p class="start-text">Deze quiz bestaat uit 10 meerkeuzevragen en 5 open vragen over hoogbegaafdheid. Test je kennis en leer meer over dit onderwerp!</p>
+            <button id="startButton" class="start-button">Start de Quiz</button>
+        </div>
+
+        <!-- Quiz Screen (initially hidden) -->
+        <div id="quizScreen" style="display: none;">
+            <br>
+            <div id="questionContainer" class="question-container">
+                <h2 id="questionTitle">Dit is vraag 1:</h2>
+            </div>
+
+            <div class="container">
+                <p id="questionText" style="color: white; margin-bottom: 20px; font-size: 18px;"></p>
+
+                <!-- Multiple Choice Options -->
+                <div id="multipleChoiceContainer" class="answer-container">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+
+                <!-- Open Question -->
+                <div id="openQuestionContainer" class="answer-container" style="display: none;">
+                    <textarea id="openAnswer" class="open-answer" placeholder="Type je antwoord hier..."></textarea>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button id="prevButton" class="nav-button" disabled>Vorige</button>
+                <button id="nextButton" class="nav-button">Volgende</button>
+                <button id="submitButton" class="nav-button" style="display: none;">Indienen</button>
+            </div>
+        </div>
+
+        <!-- Results Screen (initially hidden) -->
+        <div id="resultScreen" class="result-container" style="display: none;">
+            <h2 class="result-title">Quiz Resultaten</h2>
+            <div id="scoreDisplay" class="score">0/15</div>
+            <p id="resultSummary" class="result-summary">
+                Bedankt voor het voltooien van de Autisme Quiz! 
+                Hieronder vind je een overzicht van je antwoorden.
+            </p>
+            <button id="restartButton" class="start-button">Quiz Opnieuw Doen</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Quizzes App. All rights reserved.</p>
+    </footer>
+
+    <script src="/scripts/hoogbegaafdheid.js"></script>
