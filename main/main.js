@@ -91,7 +91,7 @@
             // For example:
             // window.location.href = `/quiz.html?type=${quizType}`;
             // Or show a modal with the quiz questions
-        }
+        
         
         // Search functionality
         const searchInput = document.querySelector('.search-input');
