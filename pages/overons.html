@@ -4,236 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wie zijn wij? - Quizzes</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-circle {
-            width: 30px;
-            height: 30px;
-            background-color: #f0f4f8;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .search-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-input {
-            padding: 8px 15px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            outline: none;
-        }
-
-        .search-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
-        .hero-banner {
-            background: linear-gradient(45deg, #3a7bd5, #00d2ff, #3a6073, #16222a);
-            background-size: 300% 300%;
-            animation: gradient-animation 15s ease infinite;
-            padding: 80px 0;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .triangles-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0idHJpYW5nbGVzIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMCkiPgogICAgICA8cGF0aCBkPSJNMCAwIGwzMCAzMCBsLTMwIDMwIHoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjdHJpYW5nbGVzKSIvPgo8L3N2Zz4=');
-            opacity: 0.6;
-        }
-
-        .hero-content {
-            display: flex;
-            width: 1200px;
-            max-width: 90%;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1;
-        }
-
-        .hero-text {
-            color: white;
-            max-width: 500px;
-        }
-
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-        }
-
-        .hero-image {
-            width: 300px;
-            height: 300px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
-
-        .team-section {
-            padding: 60px 0;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .team-card {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .team-card-inner {
-            padding: 30px;
-            color: white;
-            background: linear-gradient(45deg, #3a7bd5, #00d2ff);
-            height: 100%;
-        }
-
-        .team-card:nth-child(1) .team-card-inner {
-            background: linear-gradient(45deg, #6441a5, #2a0845);
-        }
-
-        .team-card:nth-child(2) .team-card-inner {
-            background: linear-gradient(45deg, #3a7bd5, #00d2ff);
-        }
-
-        .team-card:nth-child(3) .team-card-inner {
-            background: linear-gradient(45deg, #1FA2FF, #12D8FA, #A6FFCB);
-        }
-
-        .team-card:nth-child(4) .team-card-inner {
-            background: linear-gradient(45deg, #56ab2f, #a8e063);
-        }
-
-        .team-name {
-            font-size: 28px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .team-description {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: auto;
-        }
-
-        .triangles-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0idHJpYW5nbGVzIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMCkiPgogICAgICA8cGF0aCBkPSJNMCAwIGwzMCAzMCBsLTMwIDMwIHoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjdHJpYW5nbGVzKSIvPgo8L3N2Zz4=');
-            opacity: 0.6;
-            z-index: -1;
-        }
-
-        @media (max-width: 768px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-image {
-                margin-top: 30px;
-                width: 250px;
-                height: 250px;
-            }
-
-            .team-section {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/overons.css">
 </head>
 <body>
     <header>
@@ -242,11 +13,11 @@
                 <div class="logo-circle"></div>
                 Quizzes
             </a>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Quizzes</a>
-                <a href="#">Over ons</a>
-            </div>
+                <ul>
+                    <li><a onclick="window.document.location.href = '/index.html'">Home</a></li>
+                    <li><a onclick="window.document.location.href = '/pages/vragen.html'">Vragen</a></li>
+                    <li><a onclick="window.document.location.href = '/pages/overons.html'">Over ons</a></li>
+                </ul>
             <div class="search-container">
                 <input type="text" placeholder="Zoeken..." class="search-input">
                 <button class="search-btn">🔍</button>
@@ -295,7 +66,7 @@
                 <div class="team-card-inner">
                     <h2 class="team-name">Salah</h2>
                     <p class="team-description">
-                        Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                        Mijn naam is Salahedin Said, 18 jaar, ik ben geboren in Nederland en sinds kleins af aan al gefascineerd over computers, op latere leeftijd toen ik begon na te denken welke kant ik op zou willen gaan was er maar een optie die ik graag wilde en dat was developen. ik ben begonnen met websites en vooral talen zoals HTML, CSS en Javascript gebruik ik dagelijks maar in de toekomst hoop ik nog meer te weten over andere talen en de talen die ik zelf nu gebruik. Naast programmeren doe ik ook andere dingen in mijn leven zo hou ik wel van gamen vroeger iets meer maar doe het nog steeds met regelmaat en ik sport veel omdat als je 8 uur per dag zit en typt dat beweging daarbij ook belangerijk is en vind het natuurlijk leuk.
                     </p>
                 </div>
             </div>
@@ -346,22 +117,22 @@
         }
         
         // Add navigation functionality
-        const navLinks = document.querySelectorAll('.nav-links a');
+        // const navLinks = document.querySelectorAll('.nav-links a');
         
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = link.textContent.toLowerCase();
-                if (page === 'home') {
-                    window.location.href = 'index.html';
-                } else if (page === 'quizzes') {
-                    window.location.href = 'quizzes.html';
-                } else if (page === 'over ons') {
-                    // Already on this page
-                    return;
-                }
-            });
-        });
+        // navLinks.forEach(link => {
+        //     link.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         const page = link.textContent.toLowerCase();
+        //         if (page === 'home') {
+        //             window.location.href = 'index.html';
+        //         } else if (page === 'quizzes') {
+        //             window.location.href = 'quizzes.html';
+        //         } else if (page === 'over ons') {
+        //             // Already on this page
+                    // return;
+        //         }
+        //     });
+        // });
         
         // Logo click returns to home
         const logo = document.querySelector('.logo');
