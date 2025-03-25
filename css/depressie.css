@@ -55,7 +55,9 @@ header {
 }
 
 #quizScreen{
-    background: url(https://media.istockphoto.com/id/1213547551/nl/foto/wereld-autisme-bewustzijn-dag-concept-volwassen-en-kindhanden-die-raadselhart-op-lichtblauwe.jpg?s=2048x2048&w=is&k=20&c=05S--fBg27g7mDcdpgOndS5lSeQQ0c7GjtBpceQC8Z4=);
+    background: url(../images/depression.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #resultScreen{
@@ -63,6 +65,7 @@ header {
 }
 #resultScreen::before{
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><polygon points="0,0 50,25 100,0" fill="rgba(255,255,255,0.1)"/><polygon points="0,25 50,50 100,25" fill="rgba(255,255,255,0.15)"/><polygon points="0,50 50,75 100,50" fill="rgba(255,255,255,0.1)"/><polygon points="0,75 50,100 100,75" fill="rgba(255,255,255,0.15)"/></svg>');
+    
 }
 
 nav ul {

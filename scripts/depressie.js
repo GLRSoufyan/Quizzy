@@ -1,142 +1,137 @@
- // Quiz data structure
- const quizData = {
+// Quiz data structure
+const quizData = {
     multipleChoice: [
         {
-            question: "Wat is autisme?",
+            question: "Wat is een veelvoorkomend symptoom van depressie?",
             options: [
-                "Een tijdelijke aandoening die verdwijnt na de puberteit",
-                "Een neurologische ontwikkelingsstoornis die invloed heeft op communicatie en sociaal gedrag",
-                "Een psychische aandoening die alleen bij volwassenen voorkomt",
-                "Een leerstoornis die alleen invloed heeft op schoolprestaties"
+                "Voelen van extreme blijdschap",
+                "Gebrek aan energie en vermoeidheid",
+                "Verhoogde eetlust",
+                "Onverwachte vreugde"
             ],
-            correctKeywords: ["neurologisch", "ontwikkelingsstoornis", "communicatie", "sociaal"],
-            explanation: "Autisme is een neurologische ontwikkelingsstoornis die invloed heeft op hoe mensen communiceren en omgaan met anderen en hun omgeving."
+            correctAnswer: "Gebrek aan energie en vermoeidheid",
+            explanation: "Een veelvoorkomend symptoom van depressie is een gebrek aan energie en extreme vermoeidheid."
         },
         {
-            question: "Welke term wordt gebruikt om te verwijzen naar het spectrum van autistische aandoeningen?",
+            question: "Welke van de volgende situaties kan een depressie verergeren?",
             options: [
-                "Autisme Spectrum Stoornis (ASS)",
-                "Pervasieve Ontwikkelingsstoornis (POS)",
-                "Algemene Sociale Stoornis (ASS)",
-                "Neurologische Communicatiestoornis (NCS)"
+                "Steun van vrienden",
+                "Slechte slaapkwaliteit",
+                "Gezonde voeding",
+                "Veel beweging"
             ],
-            correctKeywords: ["autisme spectrum stoornis", "ass", "spectrum"],
-            explanation: "Autisme Spectrum Stoornis (ASS) is de officiële term die gebruikt wordt om te verwijzen naar verschillende condities die voorheen afzonderlijk werden gediagnosticeerd."
+            correctAnswer: "Slechte slaapkwaliteit",
+            explanation: "Slechte slaapkwaliteit kan bijdragen aan het verergeren van depressieve symptomen."
         },
         {
-            question: "Op welke leeftijd kunnen de eerste tekenen van autisme meestal worden opgemerkt?",
+            question: "Wat kan helpen bij het verminderen van symptomen van depressie?",
             options: [
-                "Tussen 12 en 18 jaar",
-                "Tussen 6 en 12 jaar",
-                "Tussen 2 en 3 jaar",
-                "Alleen bij volwassenen"
+                "Alleen blijven",
+                "Professionele hulp zoeken",
+                "Meer tv kijken",
+                "Niet praten over je gevoelens"
             ],
-            correctKeywords: ["2", "3", "vroeg", "jong", "peuter"],
-            explanation: "De eerste tekenen van autisme kunnen meestal worden opgemerkt tussen de leeftijd van 2 en 3 jaar, hoewel sommige kinderen eerder of later symptomen kunnen vertonen."
+            correctAnswer: "Professionele hulp zoeken",
+            explanation: "Professionele hulp zoeken is vaak effectief bij het verminderen van symptomen van depressie."
         },
         {
-            question: "Welke van de volgende is GEEN kenmerkend symptoom van autisme?",
+            question: "Wat betekent het als iemand zegt 'ik voel me depressief'?",
             options: [
-                "Beperkte of repetitieve gedragspatronen",
-                "Moeite met sociale interactie en communicatie",
-                "Verhoogde intelligentie en creativiteit bij alle mensen met autisme",
-                "Overgevoeligheid of ondergevoeligheid voor zintuiglijke prikkels"
+                "Ze voelen zich tijdelijk verdrietig",
+                "Ze hebben een langdurig gevoel van verdriet of leegte",
+                "Ze zijn heel blij",
+                "Ze hebben veel energie"
             ],
-            correctKeywords: ["verhoogd", "intelligentie", "creativiteit", "alle"],
-            explanation: "Niet alle mensen met autisme hebben een verhoogde intelligentie of creativiteit. Autisme beïnvloedt mensen op verschillende manieren en het spectrum is zeer divers."
+            correctAnswer: "Ze hebben een langdurig gevoel van verdriet of leegte",
+            explanation: "Wanneer iemand zegt zich depressief te voelen, verwijst dit vaak naar een langdurig gevoel van verdriet of leegte."
         },
         {
-            question: "Wat wordt bedoeld met 'speciale interesses' bij mensen met autisme?",
+            question: "Wat is geen oorzaak van depressie?",
             options: [
-                "Interesses die alleen door mensen met autisme worden gedeeld",
-                "Intense focus op specifieke onderwerpen of activiteiten",
-                "Therapieën die speciaal ontworpen zijn voor mensen met autisme",
-                "Interesses die door artsen worden voorgeschreven"
+                "Genetische factoren",
+                "Stressvolle levensgebeurtenissen",
+                "Regelmatige lichaamsbeweging",
+                "Chemische onevenwichtigheden in de hersenen"
             ],
-            correctKeywords: ["intense", "focus", "specifiek"],
-            explanation: "Speciale interesses bij mensen met autisme verwijzen naar een intense focus of fascinatie voor specifieke onderwerpen of activiteiten, waarbij ze vaak gedetailleerde kennis ontwikkelen."
+            correctAnswer: "Regelmatige lichaamsbeweging",
+            explanation: "Regelmatige lichaamsbeweging is eerder een manier om depressie te voorkomen, geen oorzaak van depressie."
         },
         {
-            question: "Wat is stimming?",
+            question: "Welke van de volgende behandelingen wordt vaak gebruikt bij depressie?",
             options: [
-                "Een medicijn gebruikt voor de behandeling van autisme",
-                "Een therapeutische methode om communicatie te verbeteren",
-                "Repetitieve gedragingen of bewegingen die zelfregulering ondersteunen",
-                "Een test om autisme te diagnosticeren"
+                "Fysiotherapie",
+                "Psychotherapie",
+                "Chirurgie",
+                "Rust in bed"
             ],
-            correctKeywords: ["repetitief", "gedrag", "beweging", "zelfregulering"],
-            explanation: "Stimming verwijst naar repetitieve gedragingen of bewegingen die mensen met autisme kunnen helpen bij het reguleren van emoties, het omgaan met overweldigende situaties of het uiten van gevoelens."
+            correctAnswer: "Psychotherapie",
+            explanation: "Psychotherapie is een veelgebruikte behandeling voor depressie."
         },
         {
-            question: "Welke uitspraak over autisme is WAAR?",
+            question: "Wat is een veelvoorkomende lichamelijke klacht bij depressie?",
             options: [
-                "Autisme komt alleen voor bij kinderen en verdwijnt meestal in de volwassenheid",
-                "Autisme wordt voornamelijk veroorzaakt door vaccinaties",
-                "Autisme komt vaker voor bij jongens dan bij meisjes",
-                "Alle mensen met autisme hebben een verstandelijke beperking"
+                "Verhoogde hartslag",
+                "Hoofdpijn en spierpijn",
+                "Toegenomen eetlust",
+                "Overmatig zweten"
             ],
-            correctKeywords: ["jongens", "meer", "vaker", "meisjes"],
-            explanation: "Onderzoek toont aan dat autisme vaker wordt gediagnosticeerd bij jongens dan bij meisjes, hoewel er bewijs is dat meisjes mogelijk worden onderdiagnosticeerd vanwege verschillende manifestaties van symptomen."
+            correctAnswer: "Hoofdpijn en spierpijn",
+            explanation: "Hoofdpijn en spierpijn zijn veelvoorkomende lichamelijke klachten die mensen met depressie ervaren."
         },
         {
-            question: "Wat is 'masking' of 'camouflage' bij autisme?",
+            question: "Welke van de volgende mensen kan een depressie diagnose stellen?",
             options: [
-                "Een therapeutische aanpak om autisme te behandelen",
-                "Het vermogen om autistische kenmerken te verbergen of sociaal geaccepteerd gedrag na te bootsen",
-                "Een methode om autisme vroegtijdig te diagnosticeren",
-                "Het gebruik van maskers om zintuiglijke overprikkeling te verminderen"
+                "Je beste vriend",
+                "Een huisarts of psycholoog",
+                "Je ouders",
+                "Een leraar"
             ],
-            correctKeywords: ["verbergen", "nabootsen", "camoufleren", "sociaal geaccepteerd"],
-            explanation: "Masking of camouflage verwijst naar het bewust of onbewust verbergen van autistische kenmerken en het nabootsen van sociaal geaccepteerd gedrag om beter in te passen in sociale situaties."
+            correctAnswer: "Een huisarts of psycholoog",
+            explanation: "Een huisarts of psycholoog kan een depressie diagnose stellen."
         },
         {
-            question: "Welke aanpak wordt vaak gebruikt om mensen met autisme te ondersteunen?",
+            question: "Welke van de volgende is geen symptoom van depressie?",
             options: [
-                "Volledige isolatie van sociale interacties",
-                "Gedwongen gedragsverandering",
-                "Gestructureerde routines en visuele ondersteuning",
-                "Verplichte medicatie"
+                "Verlies van interesse in dagelijkse activiteiten",
+                "Verhoogde motivatie om nieuwe dingen te proberen",
+                "Gevoel van hopeloosheid",
+                "Slaapproblemen"
             ],
-            correctKeywords: ["structuur", "routine", "visueel", "ondersteuning"],
-            explanation: "Gestructureerde routines en visuele ondersteuning zijn effectieve benaderingen omdat ze voorspelbaarheid bieden en communicatie ondersteunen, wat vaak uitdagingen zijn voor mensen met autisme."
+            correctAnswer: "Verhoogde motivatie om nieuwe dingen te proberen",
+            explanation: "Verhoogde motivatie om nieuwe dingen te proberen is geen symptoom van depressie."
         },
         {
-            question: "Wat is een common misconception over autisme?",
+            question: "Wat is een risicofactor voor het ontwikkelen van depressie?",
             options: [
-                "Dat alle mensen met autisme bovengemiddeld intelligent zijn",
-                "Dat autisme een levenslange conditie is",
-                "Dat autisme invloed heeft op sociale interactie",
-                "Dat autisme een spectrum is met verschillende uitingsvormen"
+                "Het hebben van veel vrienden",
+                "Het hebben van een positieve houding",
+                "Het ervaren van een groot verlies of trauma",
+                "Regelmatig sporten"
             ],
-            correctKeywords: ["intelligent", "bovengemiddeld", "savant", "rain man"],
-            explanation: "Een veelvoorkomende misvatting is dat alle mensen met autisme bovengemiddeld intelligent zijn of savant-vaardigheden hebben, zoals soms weergegeven in films en media. In werkelijkheid varieert het intelligentieniveau binnen het autismespectrum net zoals bij de algemene bevolking."
+            correctAnswer: "Het ervaren van een groot verlies of trauma",
+            explanation: "Het ervaren van groot verlies of trauma is een belangrijke risicofactor voor het ontwikkelen van depressie."
         }
     ],
     openQuestions: [
         {
-            question: "Beschrijf minimaal drie mogelijke uitdagingen die iemand met autisme kan ervaren in een sociale situatie zoals een feestje.",
-            correctKeywords: ["overprikkeling", "zintuiglijk", "communicatie", "ongeschreven regels", "smalltalk", "oogcontact", "sociale cues", "emoties", "herkennen", "drukte", "menigte", "lawaai", "onvoorspelbaarheid", "spontaan", "verandering", "flexibiliteit"],
-            explanation: "Sociale situaties zoals feestjes kunnen verschillende uitdagingen vormen voor mensen met autisme, waaronder zintuiglijke overprikkeling door geluid en drukte, moeite met het begrijpen van ongeschreven sociale regels, uitdagingen met communicatie en smalltalk, moeite met het herkennen en interpreteren van sociale signalen en emoties, en stress door onvoorspelbaarheid."
+            question: "Hoe voel je je meestal als je depressief bent?",
+            explanation: "Open vraag waarin iemand kan delen hoe zij zich meestal voelen tijdens een depressieve periode."
         },
         {
-            question: "Wat zijn 'executive functioning skills' en hoe kunnen deze beïnvloed worden bij mensen met autisme?",
-            correctKeywords: ["plannen", "organiseren", "prioriteiten", "tijdmanagement", "werkgeheugen", "impulscontrole", "taakinitiatie", "flexibiliteit", "doelgericht", "metacognitie", "zelfmonitoring", "aandacht"],
-            explanation: "Executive functioning skills zijn cognitieve processen die betrokken zijn bij het plannen, organiseren, tijdmanagement, werkgeheugen, taakinitiatie, emotieregulatie, flexibel denken en zelfmonitoring. Bij mensen met autisme kunnen deze vaardigheden vaak beïnvloed zijn, wat uitdagingen kan opleveren bij alledaagse taken, planning, aanpassing aan veranderingen en het reguleren van emoties."
+            question: "Wat zijn volgens jou manieren om iemand te steunen die depressief is?",
+            explanation: "Open vraag om te reflecteren op manieren om steun te bieden aan iemand met depressie."
         },
         {
-            question: "Hoe kan de omgeving worden aangepast om beter tegemoet te komen aan de behoeften van mensen met autisme?",
-            correctKeywords: ["visuele ondersteuning", "structuur", "routine", "voorspelbaarheid", "prikkelarm", "rustig", "duidelijk", "concreet", "zintuiglijk", "communicatie", "aanpassingen", "tijd", "overgangen", "signalen", "hulpmiddelen"],
-            explanation: "Omgevingsaanpassingen kunnen o.a. bestaan uit: het bieden van structuur en voorspelbaarheid, het gebruik van visuele ondersteuning zoals pictogrammen of geschreven instructies, het creëren van prikkelarme ruimtes, duidelijke en concrete communicatie, het geven van voldoende tijd voor verwerking en overgangen, en het bieden van zintuiglijke hulpmiddelen of rustige ruimtes."
+            question: "Kun je een situatie beschrijven waarin je je hopeloos of overweldigd voelde, maar uiteindelijk verbeterde?",
+            explanation: "Open vraag voor persoonlijke reflectie over een ervaring met depressie en herstel."
         },
         {
-            question: "Leg uit wat wordt bedoeld met 'Theory of Mind' in relatie tot autisme.",
-            correctKeywords: ["gedachten", "gevoelens", "perspectief", "inleven", "anderen", "standpunt", "mentaliseren", "empathie", "begrip", "intenties", "overtuigingen", "mindblindness"],
-            explanation: "Theory of Mind verwijst naar het vermogen om te begrijpen dat anderen gedachten, gevoelens en perspectieven hebben die verschillen van de eigen ervaring. Bij mensen met autisme kan dit vermogen anders ontwikkeld zijn, wat kan leiden tot uitdagingen in het begrijpen van andermans intenties, het interpreteren van sociale situaties, en het anticiperen op reacties van anderen."
+            question: "Waarom denk je dat het belangrijk is om over depressie te praten?",
+            explanation: "Open vraag om na te denken over het belang van praten over depressie."
         },
         {
-            question: "Hoe kan neurodiversiteit bijdragen aan een meer inclusieve samenleving voor mensen met autisme?",
-            correctKeywords: ["acceptatie", "waarde", "diversiteit", "verschillen", "sterktes", "talent", "uniek", "perspectief", "bijdrage", "inclusie", "begrip", "accommodatie", "aanpassing", "neurotypisch", "neurodivergent", "respect"],
-            explanation: "Het neurodiversiteitsperspectief erkent dat neurologische verschillen zoals autisme natuurlijke variaties zijn in het menselijk brein, en geen 'stoornissen' die 'genezen' moeten worden. Door deze verschillen te waarderen, in plaats van ze te zien als tekortkomingen, kan de samenleving inclusiever worden. Dit kan leiden tot meer begrip, betere aanpassingen in onderwijs en werkplekken, het benutten van unieke talenten en perspectieven, en het bevorderen van zelfacceptatie en eigenwaarde bij neurodivergente individuen."
+            question: "Hoe zou je iemand aanraden om hulp te zoeken als ze last hebben van depressie?",
+            explanation: "Open vraag om suggesties te geven voor het zoeken naar hulp bij depressie."
         }
     ]
 };
