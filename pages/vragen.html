@@ -1,76 +1,102 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autisme Quiz | Quizzes</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="./css/main.css" rel="stylesheet">
+    <title>Quizzes.nl - Theorie</title>
+    <link rel="stylesheet" href="/css/main.css">
 
     <audio id="bg-music" autoplay loop>
         <source src="/media/background.mp3" type="audio/mpeg">
     </audio>
+    <audio id="meow-sound" src="media/woosh-230554.mp3"></audio>
 </head>
 
 <body>
     <header>
-        <div class="navbar">
-            <div class="logo">
-                <span>Quizzes</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a onclick="window.document.location.href = '/index.html'">Home</a></li>
-                    <li><a onclick="window.document.location.href = '/pages/vragen.html'">Vragen</a></li>
-                    <li><a onclick="window.document.location.href = '/pages/overons.html'">Over ons</a></li>
-                </ul>
-                <div class="search">
-                    <input type="text" placeholder="Zoeken...">
-                    <button class="search-icon"></button>
-                </div>
-            </nav>
+      <div class="logo">
+        <img class="logo-circle" src="/media/QuizzieLogo.png"></img>
+            <span>Quizzes</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a onclick="window.document.location.href = '/index.html'">Home</a></li>
+                <li><a onclick="window.document.location.href = '/pages/vragen.html'">Vragen</a></li>
+                <li><a onclick="window.document.location.href = '/pages/overons.html'">Over ons</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Zoeken...">
+            <button class="search-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
         </div>
     </header>
-
-    <section class="quiz-intro">
-        <h1>Welkom bij de Autisme Quiz</h1>
-        <p>Test je kennis met deze leuke quiz</p>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welkom bij Quizzes.nl</h1>
+            <p class="prettyfont">Leer voordat je de quiz maakt de theorie!</p>
+        </div>
+        <div class="hero-image"></div>
     </section>
 
-    <section class="quiz-question">
-        <div class="question">
-            <h2>Dit is vraag 1:</h2>
+
+
+    
+    <section class="quizzes-section">
+        <div class="quiz-card autisme" data-quiz="autisme" onclick="window.document.location.href = '/pages/autisme.html'">
+            <div class="quiz-card-img"></div>
+            <div class="quiz-card-content">
+                <h3>Autisme Quizzie</h3>
+                <p>Daag je kennis over Autisme uit</p>
+                <div class="difficulty-badge">Difficulty: Easy</div>
+                <div class="author">Soufyan</div>
+            </div>
         </div>
-        <div class="answers">
-            <div class="answer-option">
-                <input type="radio" id="answer1" name="question1" value="1">
-                <label for="answer1">Antwoord 1</label>
+        
+        <div class="quiz-card depressie" data-quiz="depressie"onclick="window.document.location.href = '/pages/depressie.html'">
+            <img class="quiz-card-img" src="/media/depressie (1).jpg"></img>
+            <div class="quiz-card-content">
+                <h3>Depressie Quizzie</h3>
+                <p>Test je kennis over Depressie uit</p>
+                <div class="difficulty-badge">Difficulty: Medium</div>
+                <div class="author">Fabian</div>
             </div>
-
-            <div class="answer-option">
-                <input type="radio" id="answer2" name="question1" value="2">
-                <label for="answer2">Antwoord 2</label>
+        </div>
+        
+        <div class="quiz-card dyscalculie" data-quiz="dyscalculie"onclick="window.document.location.href = '/pages/dyscalculie.html'">
+            <img class="quiz-card-img" src="/media/dyscaculie.jpg"></img>
+            <div class="quiz-card-content">
+                <h3>Dyscalculie Quizzie</h3>
+                <p>Daag je kennis over Dyscalculie uit</p>
+                <div class="difficulty-badge">Difficulty: Medium</div>
+                <div class="author">Guusje</div>
             </div>
-
-            <div class="answer-option">
-                <input type="radio" id="answer3" name="question1" value="3">
-                <label for="answer3">Antwoord 3</label>
-            </div>
-
-            <div class="answer-option">
-                <input type="radio" id="answer4" name="question1" value="4">
-                <label for="answer4">Antwoord 4</label>
+        </div>
+        
+        <div class="quiz-card hoogbegaafdheid" data-quiz="hoogbegaafdheid"onclick="window.document.location.href = '/pages/hoogbegaafdheid.html'">
+            <div class="quiz-card-img"></div>
+            <div class="quiz-card-content">
+                <h3>Hoogbegaafdheid Quizzie</h3>
+                <p>Test je kennis over Hoogbegaafdheid uit</p>
+                <div class="difficulty-badge">Difficulty: Hard</div>
+                <div class="author">Salah</div>
             </div>
         </div>
     </section>
-
+    
     <footer>
         <p>© 2025 Quizzes App. All rights reserved.</p>
     </footer>
+    
+    <script src="/scripts/main.js"></script>
 </body>
-
 </html>

@@ -33,7 +33,7 @@ function displayHomepageLeaderboard() {
     
     // Create table header
     const headerRow = table.insertRow();
-    ['Positie', 'Naam', 'Score', 'Datum'].forEach(headerText => {
+    ['Positie', 'Naam', 'Score'].forEach(headerText => {
         const th = document.createElement('th');
         th.textContent = headerText;
         headerRow.appendChild(th);
@@ -45,7 +45,6 @@ function displayHomepageLeaderboard() {
         row.insertCell(0).textContent = index + 1;
         row.insertCell(1).textContent = entry.name;
         row.insertCell(2).textContent = `${entry.score}/${entry.totalQuestions}`;
-        row.insertCell(3).textContent = entry.date;
     });
     
     // Add table to container

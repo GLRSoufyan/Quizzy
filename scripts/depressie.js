@@ -9,7 +9,7 @@ const quizData = {
                 "Verhoogde eetlust",
                 "Onverwachte vreugde"
             ],
-            correctAnswer: "Gebrek aan energie en vermoeidheid",
+            correctKeywords: "Gebrek aan energie en vermoeidheid",
             explanation: "Een veelvoorkomend symptoom van depressie is een gebrek aan energie en extreme vermoeidheid."
         },
         {
@@ -20,7 +20,7 @@ const quizData = {
                 "Gezonde voeding",
                 "Veel beweging"
             ],
-            correctAnswer: "Slechte slaapkwaliteit",
+            correctKeywords: "Slechte slaapkwaliteit",
             explanation: "Slechte slaapkwaliteit kan bijdragen aan het verergeren van depressieve symptomen."
         },
         {
@@ -31,7 +31,7 @@ const quizData = {
                 "Meer tv kijken",
                 "Niet praten over je gevoelens"
             ],
-            correctAnswer: "Professionele hulp zoeken",
+            correctKeywords: "Professionele hulp zoeken",
             explanation: "Professionele hulp zoeken is vaak effectief bij het verminderen van symptomen van depressie."
         },
         {
@@ -42,7 +42,7 @@ const quizData = {
                 "Ze zijn heel blij",
                 "Ze hebben veel energie"
             ],
-            correctAnswer: "Ze hebben een langdurig gevoel van verdriet of leegte",
+            correctKeywords: "Ze hebben een langdurig gevoel van verdriet of leegte",
             explanation: "Wanneer iemand zegt zich depressief te voelen, verwijst dit vaak naar een langdurig gevoel van verdriet of leegte."
         },
         {
@@ -53,7 +53,7 @@ const quizData = {
                 "Regelmatige lichaamsbeweging",
                 "Chemische onevenwichtigheden in de hersenen"
             ],
-            correctAnswer: "Regelmatige lichaamsbeweging",
+            correctKeywords: "Regelmatige lichaamsbeweging",
             explanation: "Regelmatige lichaamsbeweging is eerder een manier om depressie te voorkomen, geen oorzaak van depressie."
         },
         {
@@ -64,7 +64,7 @@ const quizData = {
                 "Chirurgie",
                 "Rust in bed"
             ],
-            correctAnswer: "Psychotherapie",
+            correctKeywords: "Psychotherapie",
             explanation: "Psychotherapie is een veelgebruikte behandeling voor depressie."
         },
         {
@@ -75,7 +75,7 @@ const quizData = {
                 "Toegenomen eetlust",
                 "Overmatig zweten"
             ],
-            correctAnswer: "Hoofdpijn en spierpijn",
+            correctKeywords: "Hoofdpijn en spierpijn",
             explanation: "Hoofdpijn en spierpijn zijn veelvoorkomende lichamelijke klachten die mensen met depressie ervaren."
         },
         {
@@ -86,7 +86,7 @@ const quizData = {
                 "Je ouders",
                 "Een leraar"
             ],
-            correctAnswer: "Een huisarts of psycholoog",
+            correctKeywords: "Een huisarts of psycholoog",
             explanation: "Een huisarts of psycholoog kan een depressie diagnose stellen."
         },
         {
@@ -97,7 +97,7 @@ const quizData = {
                 "Gevoel van hopeloosheid",
                 "Slaapproblemen"
             ],
-            correctAnswer: "Verhoogde motivatie om nieuwe dingen te proberen",
+            correctKeywords: "Verhoogde motivatie om nieuwe dingen te proberen",
             explanation: "Verhoogde motivatie om nieuwe dingen te proberen is geen symptoom van depressie."
         },
         {
@@ -108,7 +108,7 @@ const quizData = {
                 "Het ervaren van een groot verlies of trauma",
                 "Regelmatig sporten"
             ],
-            correctAnswer: "Het ervaren van een groot verlies of trauma",
+            correctKeywords: "Het ervaren van een groot verlies of trauma",
             explanation: "Het ervaren van groot verlies of trauma is een belangrijke risicofactor voor het ontwikkelen van depressie."
         }
     ],
@@ -131,8 +131,8 @@ const quizData = {
         },
         {
             question: "Hoe zou je iemand aanraden om hulp te zoeken als ze last hebben van depressie?",
-            explanation: "Open vraag om suggesties te geven voor het zoeken naar hulp bij depressie."
-        }
+            explanation: "Open vraag om suggesties te geven voor het zoeken naar hulp bij depressie.",
+        },
     ]
 };
 

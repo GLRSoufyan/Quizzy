@@ -465,7 +465,6 @@ function saveToLeaderboard() {
         name: currentPlayerName,
         score: score,
         totalQuestions: totalQuestions,
-        date: new Date().toLocaleString()
     };
     
     // Add entry to leaderboard
@@ -497,7 +496,7 @@ function displayLeaderboard() {
         leaderboardItem.className = 'leaderboard-item';
         leaderboardItem.innerHTML = `
             <span>${index + 1}. ${entry.name}</span>
-            <span>${entry.score}/${entry.totalQuestions} (${entry.date})</span>
+            <span>${entry.score}/${entry.totalQuestions})</span>
         `;
         leaderboardList.appendChild(leaderboardItem);
     });
