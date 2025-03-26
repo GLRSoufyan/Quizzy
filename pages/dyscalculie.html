@@ -37,7 +37,33 @@
               </button>
           </div>
       </header>
+<!-- In the start screen of your quiz HTML, add this before the start button -->
+<div class="name-input-container">
+    <label for="playerName">Vul je naam in:</label>
+    <input type="text" id="playerName" class="name-input" placeholder="Jouw naam" required>
+</div>
 
+<!-- Add this CSS to your existing stylesheet -->
+<style>
+.name-input-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.name-input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #4facfe;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.start-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+</style>
     <main>
         <div class="hero">
             <div class="badge">Guusje</div>

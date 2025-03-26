@@ -412,3 +412,4 @@ function restartQuiz() {
     resultScreen.style.display = 'none';
     startScreen.style.display = 'block';
 }
+
