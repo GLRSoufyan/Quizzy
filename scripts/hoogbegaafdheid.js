@@ -409,3 +409,114 @@ function restartQuiz() {
     resultScreen.style.display = 'none';
     startScreen.style.display = 'block';
 }
+// Existing quiz code remains the same
+
+// New variables for login and leaderboard
+let currentPlayerName = '';
+const leaderboardModal = document.getElementById('leaderboardSection');
+const leaderboardList = document.getElementById('leaderboardList');
+const loginModal = document.getElementById('loginModal');
+const nameInput = document.getElementById('nameInput');
+const startLoginButton = document.getElementById('startLoginButton');
+
+// Login event listener
+startLoginButton.addEventListener('click', startQuizWithLogin);
+
+// Function to start quiz with login
+function startQuizWithLogin() {
+    const name = nameInput.value.trim();
+    
+    // Validate name input
+    if (name === '') {
+        alert('Voer alstublieft een naam in');
+        return;
+    }
+    
+    // Store current player name
+    currentPlayerName = name;
+    
+    // Hide login modal
+    loginModal.style.display = 'none';
+    
+    // Start the quiz
+    startQuiz();
+}
+
+// Modify submitQuiz function to save results
+function submitQuiz() {
+    // Existing submitQuiz logic
+    calculateScore();
+    quizScreen.style.display = 'none';
+    resultScreen.style.display = 'block';
+    scoreDisplay.textContent = `${score}/${totalQuestions}`;
+    generateResultsSummary();
+    
+    // Save to leaderboard
+    saveToLeaderboard();
+}
+
+// Function to save results to leaderboard
+function saveToLeaderboard() {
+    // Get existing leaderboard or initialize
+    const leaderboard = JSON.parse(localStorage.getItem('autismeQuizLeaderboard')) || [];
+    
+    // Create leaderboard entry
+    const entry = {
+        name: currentPlayerName,
+        score: score,
+        totalQuestions: totalQuestions,
+        date: new Date().toLocaleString()
+    };
+    
+    // Add entry to leaderboard
+    leaderboard.push(entry);
+    
+    // Sort leaderboard by score (descending)
+    leaderboard.sort((a, b) => b.score - a.score);
+    
+    // Keep top 10 entries
+    const topLeaderboard = leaderboard.slice(0, 10);
+    
+    // Save to localStorage
+    localStorage.setItem('autismeQuizLeaderboard', JSON.stringify(topLeaderboard));
+    
+    // Display leaderboard
+    displayLeaderboard();
+}
+
+// Function to display leaderboard
+function displayLeaderboard() {
+    const leaderboard = JSON.parse(localStorage.getItem('autismeQuizLeaderboard')) || [];
+    
+    // Clear existing leaderboard
+    leaderboardList.innerHTML = '';
+    
+    // Populate leaderboard
+    leaderboard.forEach((entry, index) => {
+        const leaderboardItem = document.createElement('div');
+        leaderboardItem.className = 'leaderboard-item';
+        leaderboardItem.innerHTML = `
+            <span>${index + 1}. ${entry.name}</span>
+            <span>${entry.score}/${entry.totalQuestions} (${entry.date})</span>
+        `;
+        leaderboardList.appendChild(leaderboardItem);
+    });
+    
+    // Show leaderboard section
+    leaderboardModal.style.display = 'block';
+}
+
+// Modify restartQuiz to reset login state
+function restartQuiz() {
+    // Reset variables
+    currentQuestion = 0;
+    score = 0;
+    userAnswers = [];
+    
+    // Show login modal again
+    loginModal.style.display = 'flex';
+    
+    // Hide result and leaderboard screens
+    resultScreen.style.display = 'none';
+    leaderboardModal.style.display = 'none';
+}
