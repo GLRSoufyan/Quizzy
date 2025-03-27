@@ -377,3 +377,6 @@ footer p {
         font-size: 28px;
     }
 }
+li a {
+    cursor: pointer; 
+}

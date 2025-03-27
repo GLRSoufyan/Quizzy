@@ -257,3 +257,6 @@ footer p {
       display: none;
   }
 }
+li a {
+  cursor: pointer; 
+}

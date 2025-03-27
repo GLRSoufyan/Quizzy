@@ -332,3 +332,6 @@ footer p {
 .leaderboard-item:first-child {
     margin-top: 10px;
 }
+li a {
+    cursor: pointer; 
+}
