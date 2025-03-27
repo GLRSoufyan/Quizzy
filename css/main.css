@@ -263,44 +263,72 @@ footer p {
     overflow: hidden;
 }
 
+/* Container voor de leaderboard */
 .leaderboard-container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
+    justify-content: flex-start; /* Zorgt ervoor dat de items bovenaan uitgelijnd zijn */
     align-items: center;
     padding: 5px;
     box-sizing: border-box;
     overflow: hidden;
 }
 
+/* Tabel voor de leaderboard */
 .leaderboard-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.8em;
-    margin-top: -60%;
+    margin-top: 20px; /* Iets meer ruimte boven de tabel */
+    table-layout: fixed; /* Dit zorgt ervoor dat de tabelkolommen dezelfde breedte krijgen */
 }
 
+/* De rij in de leaderboard tabel */
 .leaderboard-table tr {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2px 0;
+    display: table-row;
     border-bottom: 1px solid #ddd;
 }
 
+/* De cellen in de tabel */
 .leaderboard-table td {
     text-align: left;
+    padding: 8px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+/* De eerste cel krijgt meer ruimte voor de naam */
 .leaderboard-table td:first-child {
-    flex-grow: 1;
+    width: 40%; /* De naam neemt 40% van de breedte in */
+}
+
+/* De tweede en derde cellen nemen de resterende ruimte in */
+.leaderboard-table td:nth-child(2) {
+    width: 30%; /* Score krijgt 30% van de breedte */
 }
 
 .leaderboard-table td:last-child {
     text-align: right;
+    width: 30%; /* Datum krijgt de laatste 30% van de breedte */
+}
+
+/* Voor de leaderboard items zonder tabel, voor de modal/andere weergave */
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.leaderboard-item span {
+    margin-left: 15px; /* Spacing tussen de kolommen in de leaderboard */
+    flex: 1; /* Dit zorgt ervoor dat de elementen zich aanpassen aan de breedte */
+}
+
+/* Zorg ervoor dat de items een mooie margin hebben */
+.leaderboard-item:first-child {
+    margin-top: 10px;
 }
