@@ -1,5 +1,4 @@
-// Quiz data structure
- const quizData = {
+const quizData = {
     multipleChoice: [
         {
             question: "Wat is een veelvoorkomend kenmerk van hoogbegaafde mensen?",
@@ -139,6 +138,7 @@
         }
     ]
 };
+
 
 
 let currentQuestion = 0;
