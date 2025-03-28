@@ -37,10 +37,21 @@
               </button>
           </div>
       </header>
+      <div id="loginModal">
+        <div class="login-container">
+            <h2>Voer je naam in</h2>
+            <input type="text" id="nameInput" placeholder="Typ je naam...">
+            <button id="startLoginButton">Start Quiz</button>
+        </div>
+    </div>
 
-
-
-</style>
+    <!-- Leaderboard Section -->
+    <div id="leaderboardSection" style="display: none;">
+        <h2>Leaderboard</h2>
+        <div id="leaderboardList"></div>
+    </div>
+    <main>
+      
     <main>
         <div class="hero">
             <div class="badge">Guusje</div>
@@ -90,7 +101,7 @@
             <h2 class="result-title">Quiz Resultaten</h2>
             <div id="scoreDisplay" class="score">0/15</div>
             <p id="resultSummary" class="result-summary">
-                Bedankt voor het voltooien van de Autisme Quiz! 
+                Bedankt voor het voltooien van de dyscaculie Quiz! 
                 Hieronder vind je een overzicht van je antwoorden.
             </p>
             <button id="restartButton" class="start-button">Quiz Opnieuw Doen</button>

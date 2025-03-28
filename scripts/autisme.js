@@ -409,3 +409,91 @@ function restartQuiz() {
     resultScreen.style.display = 'none';
     startScreen.style.display = 'block';
 }
+
+let currentPlayerName = '';
+const leaderboardModal = document.getElementById('leaderboardSection');
+const leaderboardList = document.getElementById('leaderboardList');
+const loginModal = document.getElementById('loginModal');
+const nameInput = document.getElementById('nameInput');
+const startLoginButton = document.getElementById('startLoginButton');
+
+startLoginButton.addEventListener('click', startQuizWithLogin);
+
+function startQuizWithLogin() {
+    const name = nameInput.value.trim();
+    
+    if (name === '') {
+        alert('Voer alstublieft een naam in');
+        return;
+    }
+    
+    currentPlayerName = name;
+    
+    loginModal.style.display = 'none';
+    
+    startQuiz();
+}
+
+function submitQuiz() {
+    calculateScore();
+    quizScreen.style.display = 'none';
+    resultScreen.style.display = 'block';
+    scoreDisplay.textContent = `${score}/${totalQuestions}`;
+    generateResultsSummary();
+    
+    saveToLeaderboard();
+    
+    displayLeaderboard(); 
+}
+
+function saveToLeaderboard() {
+    const leaderboard = JSON.parse(localStorage.getItem('autismeQuizLeaderboard')) || [];
+    
+    const entry = {
+        name: currentPlayerName,
+        score: score,
+        totalQuestions: totalQuestions,
+        date: new Date().toLocaleDateString(), 
+    };
+    
+    leaderboard.push(entry);
+    
+    leaderboard.sort((a, b) => b.score - a.score);
+    
+    const topLeaderboard = leaderboard.slice(0, 10);
+    
+    localStorage.setItem('autismeQuizLeaderboard', JSON.stringify(topLeaderboard));
+    
+    displayLeaderboard();
+}
+
+function displayLeaderboard() {
+    const leaderboard = JSON.parse(localStorage.getItem('autismeQuizLeaderboard')) || [];
+    
+    leaderboardList.innerHTML = '';
+    
+    leaderboard.forEach((entry, index) => {
+        const leaderboardItem = document.createElement('div');
+        leaderboardItem.className = 'leaderboard-item';
+        leaderboardItem.innerHTML = `
+            <span>${index + 1}. ${entry.name}</span>
+            <span style="margin-left: 10px;">${entry.score}/${entry.totalQuestions}</span> <!-- Add margin for spacing -->
+            <span style="margin-left: 20px;">${entry.date}</span> <!-- Add margin for spacing -->
+        `;
+        leaderboardList.appendChild(leaderboardItem);
+    });
+    
+   
+    leaderboardModal.style.display = 'block';
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    userAnswers = [];
+    
+    loginModal.style.display = 'flex';
+    
+    resultScreen.style.display = 'none';
+    leaderboardModal.style.display = 'none';
+}

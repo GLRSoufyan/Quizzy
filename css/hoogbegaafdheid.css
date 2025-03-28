@@ -419,3 +419,6 @@ footer p {
     background-color: white;
     border-radius: 5px;
 }
+li a {
+    cursor: pointer; 
+}
