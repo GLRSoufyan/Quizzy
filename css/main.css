@@ -196,7 +196,6 @@ nav a {
     text-align: right;
 }
 
-/* Quiz-specific styles */
 .autisme {
     background: linear-gradient(135deg, #7b4397 0%, #35aee8 100%);
 }
@@ -225,7 +224,6 @@ footer p {
     z-index: 1;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -255,43 +253,39 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;  /* Exacte breedte instellen */
-    height: 250px; /* Exacte hoogte instellen */
+    width: 300px;  
+    height: 250px; 
     background: rgba(255,255,255,0.2);
     border: 2px solid rgba(255,255,255,0.3);
     border-radius: 8px;
     overflow: hidden;
 }
 
-/* Container voor de leaderboard */
 .leaderboard-container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Zorgt ervoor dat de items bovenaan uitgelijnd zijn */
+    justify-content: flex-start; 
     align-items: center;
     padding: 5px;
     box-sizing: border-box;
     overflow: hidden;
 }
 
-/* Tabel voor de leaderboard */
 .leaderboard-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.8em;
-    margin-top: 20px; /* Iets meer ruimte boven de tabel */
-    table-layout: fixed; /* Dit zorgt ervoor dat de tabelkolommen dezelfde breedte krijgen */
+    margin-top: 20px; 
+    table-layout: fixed; 
 }
 
-/* De rij in de leaderboard tabel */
 .leaderboard-table tr {
     display: table-row;
     border-bottom: 1px solid #ddd;
 }
 
-/* De cellen in de tabel */
 .leaderboard-table td {
     text-align: left;
     padding: 8px;
@@ -300,22 +294,19 @@ footer p {
     text-overflow: ellipsis;
 }
 
-/* De eerste cel krijgt meer ruimte voor de naam */
 .leaderboard-table td:first-child {
-    width: 40%; /* De naam neemt 40% van de breedte in */
+    width: 40%; 
 }
 
-/* De tweede en derde cellen nemen de resterende ruimte in */
 .leaderboard-table td:nth-child(2) {
-    width: 30%; /* Score krijgt 30% van de breedte */
+    width: 30%; 
 }
 
 .leaderboard-table td:last-child {
     text-align: right;
-    width: 30%; /* Datum krijgt de laatste 30% van de breedte */
+    width: 30%; 
 }
 
-/* Voor de leaderboard items zonder tabel, voor de modal/andere weergave */
 .leaderboard-item {
     display: flex;
     justify-content: space-between;
@@ -324,11 +315,10 @@ footer p {
 }
 
 .leaderboard-item span {
-    margin-left: 15px; /* Spacing tussen de kolommen in de leaderboard */
-    flex: 1; /* Dit zorgt ervoor dat de elementen zich aanpassen aan de breedte */
+    margin-left: 15px; 
+    flex: 1; 
 }
 
-/* Zorg ervoor dat de items een mooie margin hebben */
 .leaderboard-item:first-child {
     margin-top: 10px;
 }
