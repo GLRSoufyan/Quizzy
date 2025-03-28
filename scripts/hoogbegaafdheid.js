@@ -1,145 +1,145 @@
-// Quiz data structure
- const quizData = {
+const quizData = {
     multipleChoice: [
         {
-            question: "Wat is autisme?",
+            question: "Wat is een kenmerk van hoogbegaafdheid?",
             options: [
-                "Een tijdelijke aandoening die verdwijnt na de puberteit",
-                "Een neurologische ontwikkelingsstoornis die invloed heeft op communicatie en sociaal gedrag",
-                "Een psychische aandoening die alleen bij volwassenen voorkomt",
-                "Een leerstoornis die alleen invloed heeft op schoolprestaties"
+                "Een gemiddeld IQ",
+                "Een hoog IQ en snelle informatieverwerking",
+                "Lage motivatie voor leren",
+                "Moeite met sociale interacties"
             ],
-            correctKeywords: ["neurologisch", "ontwikkelingsstoornis", "communicatie", "sociaal"],
-            explanation: "Autisme is een neurologische ontwikkelingsstoornis die invloed heeft op hoe mensen communiceren en omgaan met anderen en hun omgeving."
+            correctKeywords: "Een hoog IQ en snelle informatieverwerking",
+            explanation: "Hoogbegaafde mensen hebben vaak een hoger IQ dan gemiddeld en kunnen informatie sneller verwerken dan anderen."
         },
         {
-            question: "Welke term wordt gebruikt om te verwijzen naar het spectrum van autistische aandoeningen?",
+            question: "Hoe wordt hoogbegaafdheid meestal gemeten?",
             options: [
-                "Autisme Spectrum Stoornis (ASS)",
-                "Pervasieve Ontwikkelingsstoornis (POS)",
-                "Algemene Sociale Stoornis (ASS)",
-                "Neurologische Communicatiestoornis (NCS)"
+                "Door middel van een IQ-test",
+                "Door academische prestaties",
+                "Door sociale vaardigheden",
+                "Door sportieve prestaties"
             ],
-            correctKeywords: ["autisme spectrum stoornis", "ass", "spectrum"],
-            explanation: "Autisme Spectrum Stoornis (ASS) is de officiële term die gebruikt wordt om te verwijzen naar verschillende condities die voorheen afzonderlijk werden gediagnosticeerd."
+            correctKeywords: "Door middel van een IQ-test",
+            explanation: "Hoogbegaafdheid wordt vaak gemeten met een IQ-test waarbij een score van 130 of hoger wordt beschouwd als een indicatie van hoogbegaafdheid."
         },
         {
-            question: "Op welke leeftijd kunnen de eerste tekenen van autisme meestal worden opgemerkt?",
+            question: "Wat is een veelvoorkomend sociaal kenmerk van hoogbegaafde kinderen?",
             options: [
-                "Tussen 12 en 18 jaar",
-                "Tussen 6 en 12 jaar",
-                "Tussen 2 en 3 jaar",
-                "Alleen bij volwassenen"
+                "Ze zijn altijd goed in sociale interacties",
+                "Ze kunnen zich moeilijk aanpassen aan leeftijdsgenoten",
+                "Ze hebben geen interesse in andere kinderen",
+                "Ze houden van fysieke activiteiten"
             ],
-            correctKeywords: ["2", "3", "vroeg", "jong", "peuter"],
-            explanation: "De eerste tekenen van autisme kunnen meestal worden opgemerkt tussen de leeftijd van 2 en 3 jaar, hoewel sommige kinderen eerder of later symptomen kunnen vertonen."
+            correctKeywords: "Ze kunnen zich moeilijk aanpassen aan leeftijdsgenoten",
+            explanation: "Hoogbegaafde kinderen kunnen zich soms moeilijk aanpassen aan leeftijdsgenoten omdat ze andere interesses of vaardigheden hebben die hen onderscheiden."
         },
         {
-            question: "Welke van de volgende is GEEN kenmerkend symptoom van autisme?",
+            question: "Welke van de volgende uitspraken is waar over hoogbegaafde volwassenen?",
             options: [
-                "Beperkte of repetitieve gedragspatronen",
-                "Moeite met sociale interactie en communicatie",
-                "Verhoogde intelligentie en creativiteit bij alle mensen met autisme",
-                "Overgevoeligheid of ondergevoeligheid voor zintuiglijke prikkels"
+                "Ze zijn altijd academisch succesvol",
+                "Ze hebben vaak moeite om zich in te voegen in de samenleving",
+                "Ze hebben weinig sociale contacten",
+                "Ze ervaren geen stress"
             ],
-            correctKeywords: ["verhoogd", "intelligentie", "creativiteit", "alle"],
-            explanation: "Niet alle mensen met autisme hebben een verhoogde intelligentie of creativiteit. Autisme beïnvloedt mensen op verschillende manieren en het spectrum is zeer divers."
+            correctKeywords: "Ze hebben vaak moeite om zich in te voegen in de samenleving",
+            explanation: "Hoogbegaafde volwassenen kunnen zich soms moeilijk aanpassen aan de samenleving omdat ze anders denken en werken dan de meeste mensen."
         },
         {
-            question: "Wat wordt bedoeld met 'speciale interesses' bij mensen met autisme?",
+            question: "Wat is een uitdaging voor hoogbegaafde kinderen in het onderwijs?",
             options: [
-                "Interesses die alleen door mensen met autisme worden gedeeld",
-                "Intense focus op specifieke onderwerpen of activiteiten",
-                "Therapieën die speciaal ontworpen zijn voor mensen met autisme",
-                "Interesses die door artsen worden voorgeschreven"
+                "Ze hebben moeite met concentratie",
+                "Ze vinden het leren vaak te gemakkelijk en worden niet voldoende uitgedaagd",
+                "Ze houden niet van school",
+                "Ze hebben geen interesse in leren"
             ],
-            correctKeywords: ["intense", "focus", "specifiek"],
-            explanation: "Speciale interesses bij mensen met autisme verwijzen naar een intense focus of fascinatie voor specifieke onderwerpen of activiteiten, waarbij ze vaak gedetailleerde kennis ontwikkelen."
+            correctKeywords: "Ze vinden het leren vaak te gemakkelijk en worden niet voldoende uitgedaagd",
+            explanation: "Hoogbegaafde kinderen kunnen zich vervelen in een standaard onderwijssysteem, omdat het lesmateriaal vaak niet uitdagend genoeg is voor hen."
         },
         {
-            question: "Wat is stimming?",
+            question: "Wat kan helpen bij het ondersteunen van hoogbegaafde kinderen?",
             options: [
-                "Een medicijn gebruikt voor de behandeling van autisme",
-                "Een therapeutische methode om communicatie te verbeteren",
-                "Repetitieve gedragingen of bewegingen die zelfregulering ondersteunen",
-                "Een test om autisme te diagnosticeren"
+                "Een uitdagend en stimulerend lesprogramma",
+                "Ze altijd op hun eigen tempo laten werken zonder begeleiding",
+                "Ze alleen maar met andere hoogbegaafde kinderen laten werken",
+                "Ze aanmoedigen om hun vaardigheden te verbergen"
             ],
-            correctKeywords: ["repetitief", "gedrag", "beweging", "zelfregulering"],
-            explanation: "Stimming verwijst naar repetitieve gedragingen of bewegingen die mensen met autisme kunnen helpen bij het reguleren van emoties, het omgaan met overweldigende situaties of het uiten van gevoelens."
+            correctKeywords: "Een uitdagend en stimulerend lesprogramma",
+            explanation: "Hoogbegaafde kinderen kunnen het beste ondersteund worden met een lesprogramma dat hen uitdaagt en hen in staat stelt hun potentieel te benutten."
         },
         {
-            question: "Welke uitspraak over autisme is WAAR?",
+            question: "Wat is een van de mogelijke nadelen van hoogbegaafdheid?",
             options: [
-                "Autisme komt alleen voor bij kinderen en verdwijnt meestal in de volwassenheid",
-                "Autisme wordt voornamelijk veroorzaakt door vaccinaties",
-                "Autisme komt vaker voor bij jongens dan bij meisjes",
-                "Alle mensen met autisme hebben een verstandelijke beperking"
+                "Moeite met complexe taken",
+                "Een verhoogde kans op psychische problemen zoals depressie en angst",
+                "Onvermogen om succes te behalen",
+                "Een gebrek aan interesse in leren"
             ],
-            correctKeywords: ["jongens", "meer", "vaker", "meisjes"],
-            explanation: "Onderzoek toont aan dat autisme vaker wordt gediagnosticeerd bij jongens dan bij meisjes, hoewel er bewijs is dat meisjes mogelijk worden onderdiagnosticeerd vanwege verschillende manifestaties van symptomen."
+            correctKeywords: "Een verhoogde kans op psychische problemen zoals depressie en angst",
+            explanation: "Hoogbegaafde mensen kunnen, door het niet goed begrepen worden of door sociale isolatie, een verhoogd risico lopen op psychische problemen."
         },
         {
-            question: "Wat is 'masking' of 'camouflage' bij autisme?",
+            question: "Wat is de term die wordt gebruikt om de combinatie van zowel intellectuele als creatieve capaciteiten bij hoogbegaafde mensen te beschrijven?",
             options: [
-                "Een therapeutische aanpak om autisme te behandelen",
-                "Het vermogen om autistische kenmerken te verbergen of sociaal geaccepteerd gedrag na te bootsen",
-                "Een methode om autisme vroegtijdig te diagnosticeren",
-                "Het gebruik van maskers om zintuiglijke overprikkeling te verminderen"
+                "Intelligentie",
+                "Creativiteit",
+                "Dubbele uitzonderlijkheid",
+                "Normale ontwikkeling"
             ],
-            correctKeywords: ["verbergen", "nabootsen", "camoufleren", "sociaal geaccepteerd"],
-            explanation: "Masking of camouflage verwijst naar het bewust of onbewust verbergen van autistische kenmerken en het nabootsen van sociaal geaccepteerd gedrag om beter in te passen in sociale situaties."
+            correctKeywords: "Dubbele uitzonderlijkheid",
+            explanation: "Dubbele uitzonderlijkheid verwijst naar hoogbegaafde mensen die naast hun intellectuele capaciteiten ook creatieve of andere bijzondere talenten hebben."
         },
         {
-            question: "Welke aanpak wordt vaak gebruikt om mensen met autisme te ondersteunen?",
+            question: "Welke van de volgende is een misverstand over hoogbegaafdheid?",
             options: [
-                "Volledige isolatie van sociale interacties",
-                "Gedwongen gedragsverandering",
-                "Gestructureerde routines en visuele ondersteuning",
-                "Verplichte medicatie"
+                "Hoogbegaafde kinderen hebben geen hulp nodig",
+                "Hoogbegaafde kinderen kunnen moeite hebben met sociale interacties",
+                "Hoogbegaafde kinderen zijn altijd academisch succesvol",
+                "Hoogbegaafde kinderen hebben altijd veel vrienden"
             ],
-            correctKeywords: ["structuur", "routine", "visueel", "ondersteuning"],
-            explanation: "Gestructureerde routines en visuele ondersteuning zijn effectieve benaderingen omdat ze voorspelbaarheid bieden en communicatie ondersteunen, wat vaak uitdagingen zijn voor mensen met autisme."
+            correctKeywords: "Hoogbegaafde kinderen kunnen moeite hebben met sociale interacties",
+            explanation: "Hoogbegaafde kinderen kunnen vaak moeite hebben om zich sociaal aan te passen aan leeftijdsgenoten, omdat ze anders denken en vaak andere interesses hebben."
         },
         {
-            question: "Wat is een common misconception over autisme?",
+            question: "Welke van de volgende is een typische eigenschap van hoogbegaafde volwassenen?",
             options: [
-                "Dat alle mensen met autisme bovengemiddeld intelligent zijn",
-                "Dat autisme een levenslange conditie is",
-                "Dat autisme invloed heeft op sociale interactie",
-                "Dat autisme een spectrum is met verschillende uitingsvormen"
+                "Ze hebben vaak een grote nieuwsgierigheid en willen altijd meer leren",
+                "Ze vinden sociale interacties altijd gemakkelijk",
+                "Ze vermijden uitdagingen",
+                "Ze willen geen verantwoordelijkheid nemen"
             ],
-            correctKeywords: ["intelligent", "bovengemiddeld", "savant", "rain man"],
-            explanation: "Een veelvoorkomende misvatting is dat alle mensen met autisme bovengemiddeld intelligent zijn of savant-vaardigheden hebben, zoals soms weergegeven in films en media. In werkelijkheid varieert het intelligentieniveau binnen het autismespectrum net zoals bij de algemene bevolking."
+            correctKeywords: "Ze hebben vaak een grote nieuwsgierigheid en willen altijd meer leren",
+            explanation: "Hoogbegaafde volwassenen zijn vaak zeer nieuwsgierig, willen altijd meer leren en zijn vaak op zoek naar intellectuele stimulatie."
         }
     ],
     openQuestions: [
         {
-            question: "Beschrijf minimaal drie mogelijke uitdagingen die iemand met autisme kan ervaren in een sociale situatie zoals een feestje.",
-            correctKeywords: ["overprikkeling", "zintuiglijk", "communicatie", "ongeschreven regels", "smalltalk", "oogcontact", "sociale cues", "emoties", "herkennen", "drukte", "menigte", "lawaai", "onvoorspelbaarheid", "spontaan", "verandering", "flexibiliteit"],
-            explanation: "Sociale situaties zoals feestjes kunnen verschillende uitdagingen vormen voor mensen met autisme, waaronder zintuiglijke overprikkeling door geluid en drukte, moeite met het begrijpen van ongeschreven sociale regels, uitdagingen met communicatie en smalltalk, moeite met het herkennen en interpreteren van sociale signalen en emoties, en stress door onvoorspelbaarheid."
+            question: "Hoe zou je hoogbegaafdheid uitleggen aan iemand die er niets van weet?",
+            correctKeywords: ["reflecteren", "en", "als", "IQ", "neurodivergentie", "mentaal", "mentale"],
+            explanation: "Open vraag om te reflecteren op een eenvoudige uitleg van hoogbegaafdheid."
         },
         {
-            question: "Wat zijn 'executive functioning skills' en hoe kunnen deze beïnvloed worden bij mensen met autisme?",
-            correctKeywords: ["plannen", "organiseren", "prioriteiten", "tijdmanagement", "werkgeheugen", "impulscontrole", "taakinitiatie", "flexibiliteit", "doelgericht", "metacognitie", "zelfmonitoring", "aandacht"],
-            explanation: "Executive functioning skills zijn cognitieve processen die betrokken zijn bij het plannen, organiseren, tijdmanagement, werkgeheugen, taakinitiatie, emotieregulatie, flexibel denken en zelfmonitoring. Bij mensen met autisme kunnen deze vaardigheden vaak beïnvloed zijn, wat uitdagingen kan opleveren bij alledaagse taken, planning, aanpassing aan veranderingen en het reguleren van emoties."
+            question: "Wat denk je dat de belangrijkste uitdaging is voor hoogbegaafde kinderen in het onderwijs?",
+            correctKeywords: [" "],
+            explanation: "Open vraag om na te denken over de specifieke uitdagingen die hoogbegaafde kinderen kunnen ervaren in het onderwijssysteem."
         },
         {
-            question: "Hoe kan de omgeving worden aangepast om beter tegemoet te komen aan de behoeften van mensen met autisme?",
-            correctKeywords: ["visuele ondersteuning", "structuur", "routine", "voorspelbaarheid", "prikkelarm", "rustig", "duidelijk", "concreet", "zintuiglijk", "communicatie", "aanpassingen", "tijd", "overgangen", "signalen", "hulpmiddelen"],
-            explanation: "Omgevingsaanpassingen kunnen o.a. bestaan uit: het bieden van structuur en voorspelbaarheid, het gebruik van visuele ondersteuning zoals pictogrammen of geschreven instructies, het creëren van prikkelarme ruimtes, duidelijke en concrete communicatie, het geven van voldoende tijd voor verwerking en overgangen, en het bieden van zintuiglijke hulpmiddelen of rustige ruimtes."
+            question: "Kun je een voorbeeld geven van een hoogbegaafde persoon die een succesvolle carrière heeft gehad?",
+            correctKeywords: [" "],
+            explanation: "Open vraag om te reflecteren op succesvolle hoogbegaafde mensen en hoe zij hun talenten hebben benut."
         },
         {
-            question: "Leg uit wat wordt bedoeld met 'Theory of Mind' in relatie tot autisme.",
-            correctKeywords: ["gedachten", "gevoelens", "perspectief", "inleven", "anderen", "standpunt", "mentaliseren", "empathie", "begrip", "intenties", "overtuigingen", "mindblindness"],
-            explanation: "Theory of Mind verwijst naar het vermogen om te begrijpen dat anderen gedachten, gevoelens en perspectieven hebben die verschillen van de eigen ervaring. Bij mensen met autisme kan dit vermogen anders ontwikkeld zijn, wat kan leiden tot uitdagingen in het begrijpen van andermans intenties, het interpreteren van sociale situaties, en het anticiperen op reacties van anderen."
+            question: "Waarom denk je dat sommige hoogbegaafde mensen zich sociaal geïsoleerd voelen?",
+            correctKeywords: ["sociaal", "moeite", "EQ", "IQ"],
+            explanation: "Open vraag om na te denken over de sociale uitdagingen van hoogbegaafde mensen."
         },
         {
-            question: "Hoe kan neurodiversiteit bijdragen aan een meer inclusieve samenleving voor mensen met autisme?",
-            correctKeywords: ["acceptatie", "waarde", "diversiteit", "verschillen", "sterktes", "talent", "uniek", "perspectief", "bijdrage", "inclusie", "begrip", "accommodatie", "aanpassing", "neurotypisch", "neurodivergent", "respect"],
-            explanation: "Het neurodiversiteitsperspectief erkent dat neurologische verschillen zoals autisme natuurlijke variaties zijn in het menselijk brein, en geen 'stoornissen' die 'genezen' moeten worden. Door deze verschillen te waarderen, in plaats van ze te zien als tekortkomingen, kan de samenleving inclusiever worden. Dit kan leiden tot meer begrip, betere aanpassingen in onderwijs en werkplekken, het benutten van unieke talenten en perspectieven, en het bevorderen van zelfacceptatie en eigenwaarde bij neurodivergente individuen."
-        }
+            question: "Welke strategieën zou je aanraden voor het ondersteunen van een hoogbegaafd kind?",
+            correctKeywords: [" "],
+            explanation: "Open vraag om suggesties te geven voor het ondersteunen van hoogbegaafde kinderen."
+        },
     ]
 };
+
 
 // Variables to track quiz state
 let currentQuestion = 0;
