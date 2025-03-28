@@ -140,13 +140,13 @@
     ]
 };
 
-// Variables to track quiz state
+
 let currentQuestion = 0;
 let score = 0;
 let userAnswers = [];
 const totalQuestions = quizData.multipleChoice.length + quizData.openQuestions.length;
 
-// DOM Elements
+
 const startScreen = document.getElementById('startScreen');
 const quizScreen = document.getElementById('quizScreen');
 const resultScreen = document.getElementById('resultScreen');
@@ -163,26 +163,26 @@ const restartButton = document.getElementById('restartButton');
 const scoreDisplay = document.getElementById('scoreDisplay');
 const resultSummary = document.getElementById('resultSummary');
 
-// Initialize Quiz
+
 startButton.addEventListener('click', startQuiz);
 prevButton.addEventListener('click', goToPreviousQuestion);
 nextButton.addEventListener('click', goToNextQuestion);
 submitButton.addEventListener('click', submitQuiz);
 restartButton.addEventListener('click', restartQuiz);
 
-// Start the quiz
+
 function startQuiz() {
     startScreen.style.display = 'none';
     quizScreen.style.display = 'block';
     loadQuestion();
 }
 
-// Load current question
+
 function loadQuestion() {
-    // Update question number
+   
     questionTitle.textContent = `Dit is vraag ${currentQuestion + 1}:`;
     
-    // Enable/disable navigation buttons
+    
     prevButton.disabled = currentQuestion === 0;
     
     if (currentQuestion === totalQuestions - 1) {
@@ -193,27 +193,24 @@ function loadQuestion() {
         submitButton.style.display = 'none';
     }
     
-    // Determine if current question is multiple choice or open
+    
     const isMultipleChoice = currentQuestion < quizData.multipleChoice.length;
     
     if (isMultipleChoice) {
-        // Load multiple choice question
+      
         const questionData = quizData.multipleChoice[currentQuestion];
         questionText.textContent = questionData.question;
         
-        // Show multiple choice container, hide open question container
+       
         multipleChoiceContainer.style.display = 'block';
         openQuestionContainer.style.display = 'none';
         
-        // Clear previous options
         multipleChoiceContainer.innerHTML = '';
         
-        // Add options
         questionData.options.forEach((option, index) => {
             const optionElement = document.createElement('div');
             optionElement.className = 'answer-option';
             
-            // Check if this option was previously selected
             const isSelected = userAnswers[currentQuestion] === index;
             
             optionElement.innerHTML = `
@@ -221,7 +218,6 @@ function loadQuestion() {
                 <div class="answer-circle ${isSelected ? 'selected' : ''}"></div>
             `;
             
-            // Add click event
             optionElement.addEventListener('click', () => {
                 selectOption(index);
             });
@@ -229,26 +225,20 @@ function loadQuestion() {
             multipleChoiceContainer.appendChild(optionElement);
         });
     } else {
-        // Load open question
         const openQuestionIndex = currentQuestion - quizData.multipleChoice.length;
         const questionData = quizData.openQuestions[openQuestionIndex];
         questionText.textContent = questionData.question;
         
-        // Show open question container, hide multiple choice container
         multipleChoiceContainer.style.display = 'none';
         openQuestionContainer.style.display = 'block';
         
-        // Set value of textarea if user previously answered
         openAnswer.value = userAnswers[currentQuestion] || '';
     }
 }
 
-// Select an option (for multiple choice questions)
 function selectOption(optionIndex) {
-    // Store user's answer
     userAnswers[currentQuestion] = optionIndex;
     
-    // Update UI to show selected option
     const options = multipleChoiceContainer.querySelectorAll('.answer-option');
     options.forEach((option, index) => {
         const circle = option.querySelector('.answer-circle');
@@ -260,84 +250,64 @@ function selectOption(optionIndex) {
     });
 }
 
-// Go to next question
 function goToNextQuestion() {
-    // For open questions, save the answer before moving on
     if (currentQuestion >= quizData.multipleChoice.length) {
         userAnswers[currentQuestion] = openAnswer.value;
     }
     
-    // Move to next question if not at the end
     if (currentQuestion < totalQuestions - 1) {
         currentQuestion++;
         loadQuestion();
     }
 }
 
-// Go to previous question
 function goToPreviousQuestion() {
-    // For open questions, save the answer before moving back
     if (currentQuestion >= quizData.multipleChoice.length) {
         userAnswers[currentQuestion] = openAnswer.value;
     }
     
-    // Move to previous question if not at the beginning
     if (currentQuestion > 0) {
         currentQuestion--;
         loadQuestion();
     }
 }
 
-// Submit the quiz
 function submitQuiz() {
-    // For open questions, save the answer before submitting
     if (currentQuestion >= quizData.multipleChoice.length) {
         userAnswers[currentQuestion] = openAnswer.value;
     }
-    // Calculate score
     calculateScore();
-    // Show results screen
     quizScreen.style.display = 'none';
     resultScreen.style.display = 'block';
-    // Update results display
     scoreDisplay.textContent = `${score}/${totalQuestions}`;
-    // Generate and display detailed results
     generateResultsSummary();
 }
-// Calculate the score based on user answers
 function calculateScore() {
     score = 0;
-    // Check multiple choice answers
     for (let i = 0; i < quizData.multipleChoice.length; i++) {
         const questionData = quizData.multipleChoice[i];
         const userAnswer = userAnswers[i];
-        // If user selected the correct option
         if (userAnswer !== undefined && questionData.options[userAnswer].toLowerCase().includes(questionData.correctKeywords[0].toLowerCase())) {
             score++;
         }
     }
-    // Check open question answers
     for (let i = 0; i < quizData.openQuestions.length; i++) {
         const questionIndex = i + quizData.multipleChoice.length;
         const questionData = quizData.openQuestions[i];
         const userAnswer = userAnswers[questionIndex] || '';
-        // Check if answer contains correct keywords
         let keywordsFound = 0;
         questionData.correctKeywords.forEach(keyword => {
             if (userAnswer.toLowerCase().includes(keyword.toLowerCase())) {
                 keywordsFound++;
             }
         });
-        // If the answer contains at least 3 correct keywords, count it as correct
         if (keywordsFound >= 3) {
             score++;
         }
     }
 }
-// Generate a detailed summary of results
 function generateResultsSummary() {
     let summaryHTML = `<p>Bedankt voor het voltooien van de hoogbegaafdheid Quiz!</p>`;
-    // Add score category
     const scorePercentage = (score / totalQuestions) * 100;
     let category = '';
     if (scorePercentage >= 90) {
@@ -352,9 +322,7 @@ function generateResultsSummary() {
         category = 'Je zou meer kunnen leren over hoogbegaafdheid om je begrip te vergroten.';
     }
     summaryHTML += `<p><strong>${category}</strong></p>`;
-    // Add detailed breakdown of answers
     summaryHTML += `<h3>Antwoorden Overzicht:</h3>`;
-    // Multiple choice questions
     summaryHTML += `<h4>Meerkeuzevragen:</h4>`;
     for (let i = 0; i < quizData.multipleChoice.length; i++) {
         const questionData = quizData.multipleChoice[i];
@@ -367,13 +335,11 @@ function generateResultsSummary() {
 </span><br>`;
         summaryHTML += `Uitleg: ${questionData.explanation}</p>`;
     }
-    // Open questions
     summaryHTML += `<h4>Open Vragen:</h4>`;
     for (let i = 0; i < quizData.openQuestions.length; i++) {
         const questionIndex = i + quizData.multipleChoice.length;
         const questionData = quizData.openQuestions[i];
         const userAnswer = userAnswers[questionIndex] || 'Geen antwoord';
-        // Check if answer contains correct keywords
         let keywordsFound = 0;
         const foundKeywords = [];
         questionData.correctKeywords.forEach(keyword => {
@@ -395,22 +361,16 @@ function generateResultsSummary() {
         }
         summaryHTML += `Uitleg: ${questionData.explanation}</p>`;
     }
-    // Set the innerHTML of the result summary
     resultSummary.innerHTML = summaryHTML;
 }
-// Restart the quiz
 function restartQuiz() {
-    // Reset variables
     currentQuestion = 0;
     score = 0;
     userAnswers = [];
-    // Show start screen
     resultScreen.style.display = 'none';
     startScreen.style.display = 'block';
 }
-// Existing quiz code remains the same
 
-// New variables for login and leaderboard
 let currentPlayerName = '';
 const leaderboardModal = document.getElementById('leaderboardSection');
 const leaderboardList = document.getElementById('leaderboardList');
@@ -418,82 +378,61 @@ const loginModal = document.getElementById('loginModal');
 const nameInput = document.getElementById('nameInput');
 const startLoginButton = document.getElementById('startLoginButton');
 
-// Login event listener
 startLoginButton.addEventListener('click', startQuizWithLogin);
 
-// Function to start quiz with login
 function startQuizWithLogin() {
     const name = nameInput.value.trim();
     
-    // Validate name input
     if (name === '') {
         alert('Voer alstublieft een naam in');
         return;
     }
     
-    // Store current player name
     currentPlayerName = name;
     
-    // Hide login modal
     loginModal.style.display = 'none';
     
-    // Start the quiz
     startQuiz();
 }
 
-// Modify submitQuiz function to save results
 function submitQuiz() {
-    // Existing submitQuiz logic
     calculateScore();
     quizScreen.style.display = 'none';
     resultScreen.style.display = 'block';
     scoreDisplay.textContent = `${score}/${totalQuestions}`;
     generateResultsSummary();
     
-    // Save to leaderboard
     saveToLeaderboard();
     
-    // Display leaderboard
-    displayLeaderboard(); // Ensure leaderboard is displayed after saving
+    displayLeaderboard(); 
 }
 
-// Function to save results to leaderboard
 function saveToLeaderboard() {
-    // Get existing leaderboard or initialize
     const leaderboard = JSON.parse(localStorage.getItem('autismeQuizLeaderboard')) || [];
     
-    // Create leaderboard entry with date (no time)
     const entry = {
         name: currentPlayerName,
         score: score,
         totalQuestions: totalQuestions,
-        date: new Date().toLocaleDateString(), // Only store the date without time
+        date: new Date().toLocaleDateString(), 
     };
     
-    // Add entry to leaderboard
     leaderboard.push(entry);
     
-    // Sort leaderboard by score (descending)
     leaderboard.sort((a, b) => b.score - a.score);
     
-    // Keep top 10 entries
     const topLeaderboard = leaderboard.slice(0, 10);
     
-    // Save to localStorage
     localStorage.setItem('autismeQuizLeaderboard', JSON.stringify(topLeaderboard));
     
-    // Display leaderboard
     displayLeaderboard();
 }
 
-// Function to display leaderboard
 function displayLeaderboard() {
     const leaderboard = JSON.parse(localStorage.getItem('autismeQuizLeaderboard')) || [];
     
-    // Clear existing leaderboard
     leaderboardList.innerHTML = '';
     
-    // Populate leaderboard
     leaderboard.forEach((entry, index) => {
         const leaderboardItem = document.createElement('div');
         leaderboardItem.className = 'leaderboard-item';
@@ -505,21 +444,17 @@ function displayLeaderboard() {
         leaderboardList.appendChild(leaderboardItem);
     });
     
-    // Show leaderboard section
+   
     leaderboardModal.style.display = 'block';
 }
 
-// Modify restartQuiz to reset login state
 function restartQuiz() {
-    // Reset variables
     currentQuestion = 0;
     score = 0;
     userAnswers = [];
     
-    // Show login modal again
     loginModal.style.display = 'flex';
     
-    // Hide result and leaderboard screens
     resultScreen.style.display = 'none';
     leaderboardModal.style.display = 'none';
 }
